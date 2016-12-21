@@ -1,0 +1,131 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="safari.digital. safari, spots">
+    <meta name="author" content="mats.becker@gmail.com">
+
+
+    {{#if title}}
+      <meta property="og:title" content="safari.digital - Spotted {{ title }}" />
+    {{else}}
+      <meta property="og:title" content="safari.digital - Spots" />
+    {{/if}}
+    {{#if url}}
+      <meta property="og:image" content="{{ url }}" />
+    {{/if}}  
+    {{#if fullUrl}} <meta property="og:url" content="{{ fullUrl }}" /> {{/if}}
+    <meta property="og:type" content="website" />
+    
+
+    <title>   
+        safari.digita &middot; Spots
+    </title>
+    
+      <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+      <link href="/css/toolkit-minimal.css" rel="stylesheet">
+      <link href="/css/application-minimal.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      /* …curses ios, etc… */
+      @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+        body {
+          width: 1px;
+          min-width: 100%;
+          *width: 100%;
+        }
+        #stage {
+          height: 1px;
+          overflow: auto;
+          min-height: 100vh;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    </style>
+  </head>
+
+
+<body>
+  
+
+
+
+<nav class="navbar navbar-default navbar-static-top navbar-padded text-uppercase app-navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed p-x-0" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../">
+        <span>safari.digital</span>
+      </a>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li >
+          <a href="/">Home</a>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+
+{{{ body }}}
+
+<div class="block app-block-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2 m-b">
+        <ul class="list-unstyled list-spaced">
+          <li><h6 class="text-uppercase">Products</h6></li>
+          <li>Todo</li>
+          <li>Calendario</li>
+          <li>Email Town</li>
+          <li>Pomodorotary</li>
+          <li>ChillTower</li>
+        </ul>
+      </div>
+      <div class="col-sm-2 m-b">
+        <ul class="list-unstyled list-spaced">
+          <li><h6 class="text-uppercase">Extras</h6></li>
+          <li>AutotuneU</li>
+          <li>Freestyler</li>
+          <li>Chillaxation</li>
+        </ul>
+      </div>
+      <div class="col-sm-2 m-b">
+        <ul class="list-unstyled list-spaced">
+          <li><h6 class="text-uppercase">Support</h6></li>
+          <li>Online Support</li>
+          <li>Telephone Sales</li>
+          <li>Help Desk</li>
+          <li>Workshops</li>
+        </ul>
+      </div>
+       <div class="col-sm-6">
+        <h6 class="text-uppercase">About</h6>
+        <p>Shoutout to Invision team for creating the <a href="http://www.invisionapp.com/do">Do UI kit</a> that we used to fake our app screenshots. Also to the Dribbble community for providing phone mockups that look amazing.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/toolkit.js"></script>
+    <script src="/js/application.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,26 @@
+<div class="block app-block-intro">
+  <div class="container text-center">
+    <h1 class="block-title m-b-sm text-uppercase app-myphone-brand">Spots</h1>
+    <p class="lead">
+      {{#if parkName}}
+        spotted at {{ parkName }}
+      {{else}}
+        Nice to see you!
+      {{/if}}
+    </p>
+    {{#if url}}
+        <img src={{ url }}>
+    {{/if}}
+  </div>
+</div>
+
+<div class="block block-bordered-lg app-block-info">
+  <div class="container text-center app-translate-15">
+    <blockquote class="pull-quote">
+      <p>
+        {{ tags }}
+      </p>
+      <cite>Tags</cite>
+    </blockquote>
+  </div>
+</div>

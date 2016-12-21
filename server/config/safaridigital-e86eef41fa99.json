@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "safaridigitalapp",
+  "private_key_id": "e86eef41fa99a6161da47800a06427173b881f4b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDBuumDikTtNnMD\nb+9DPDsmZjsAMBjBSlVks+DjVQh8eVCkYnbcp63i9pQKvom1V25+0YA8tY2fuBtg\nz53NZqVta9QyKzS5iVniMgtUr5eSJTu4hh/HTE4Ujl5m3jOHT+XVFkVm8b5gV0mH\nKUsfle43CH/lhSvMdCSI7I0nLFF91upO4nS4YjhkGTjrisEmjy32snhq4tz1Q4RF\nwFn83of5Lcgy1DXpjHrnNBdVeEb8iYDEmgvAOBX7hkBUSPpUTeukwSlchVdeC2c7\nVtOZ9fahqlzb8i4bwgKusXCknGB9LxPfq7i9wubWeHkuH2x83D58aAEjp25Tl1Ct\ndYUlF4SNAgMBAAECggEAY07oQzjO6nad8KYhlWq7u4xuNENzfSoYqh2Xa5F8Xypl\nD082NRhzh8P00akouF/QUYwdW4GJztU2m6Lx9ofmxzeeN/Vz+qQRAmW67zdv0Efr\n3ERM6AISiHEOrVa8PWHUpC3dd872UzaLh5DAZLmbunRN858Xe6AR1mrEVM9gGsv6\nQYE0FsOydDc4v2/9vhbU7Q1vKZpHAsVaVDbdJKpWI9nG2iguFunKiH9sEj7j6uqw\nfcTI78L0kIZtBBj5BRtCFKDNX4zO/Be7KUvhSpydx16sjJgwby7jQ354JCejRyv3\nDSy6cxnUEJgPDdzrBKaZFDaLoZWE79EtlSZVR7yPQQKBgQD1NDvJf0jj5a0Fdbwo\nrtpIfI45u2VWWI0t0+pjTm8oqS/9DZBynPjEiDKgI8pRUXf2i70a7el25D/Boape\n6mfy40+Ksct8+9mltGGnockJsh9BqeFqHCCxdkJ1VezrSvQDM3Xrubl9R75htszB\n4v8/V+RL1W2JqeADPRF12wwwPQKBgQDKQoBIDeLzZe0emUX40v31ZYTEoAp2ytOq\nwAKANslzs+CaVrwTeGjBB5CB31n0GZZF09cXNTPhNxb2tiuvrNT2R6qmM1jKbXtl\nPSvRuEnhFiDnhWToTk5aWqhlF/V75VN0pAsCPnlMVqoPvWX4H9oSk1ZwGxAnTINA\n7JfEWhIakQKBgQDsgVEZbPf1ONbF6WVvKBfKyriz3phDzG1/wmLVHhYBdg6fWbH1\nmoonpeaOp3bBMH8xAl+H1enVjxofvbsCib1xfOZ/tDW9e33WYkG+2kF6ZJ/ZSe3t\n1uuBv7siSZqW6FirrbsTfrP2rnhm71ZXvIbNpgzBSD67BWrYNNLehkUfUQKBgQCM\nifzdFFkYS0CiPFp0dRdlxm6kuZfLx0+gm96g/HCqZtiwJYh19vrC9eChfXLhvE3A\no1wXki5EVaUtNJPSc8NehZm79n3B2qUdSY4DIYykTF38waHGEXM8MTZFWIqI1mZQ\n7BOCMarTMnzkhvQtnuRGd/5d01A8HlwtZrhmBTgDIQKBgC6nZ9i63AGZkRFCyONc\n4PhPnZNTiy7pe3FZvrub3zvgPucv8az+fyT2uWe26PrXCSDWAqvEQzy8WdBlggO6\nJq3dnBmqLq3zhHZnJTBkybeZ5aeCCwa5IOXDoYUe2HxDJMH2PFJ30oXBjZpVXClT\nh5nmvHaSRaHkP6B/hc0VR4ck\n-----END PRIVATE KEY-----\n",
+  "client_email": "spotweb@safaridigitalapp.iam.gserviceaccount.com",
+  "client_id": "117748237833590809856",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/spotweb%40safaridigitalapp.iam.gserviceaccount.com"
+}
