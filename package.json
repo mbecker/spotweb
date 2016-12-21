@@ -13,7 +13,6 @@
     "express-jwt": "^3.0.0",
     "express-session": "~1.0.2",
     "firebase": "^3.6.4",
-    "gcloud": "^0.37.0",
     "google-cloud": "^0.45.1",
     "jsonwebtoken": "^5.0.0",
     "method-override": "~1.0.0",
