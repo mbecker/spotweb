@@ -27,7 +27,7 @@
   padding-bottom: 20px;
 }
 .app-block-intro img {
-  width: 80%;
+  width: 100%;
 }
 .app-block-intro img {
   padding: 0px;
@@ -70,6 +70,11 @@
     margin-top: -220px;
     margin-left: 0;
   }
+}
+
+/* quote block */
+.quote-tags {
+  margin-top: 0px!important;
 }
 
 /* footer block */

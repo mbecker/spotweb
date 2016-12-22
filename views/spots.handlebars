@@ -3,9 +3,10 @@
     <h1 class="block-title m-b-sm text-uppercase app-myphone-brand">Spots</h1>
     <p class="lead">
       {{#if parkName}}
-        spotted at {{ parkName }}
-      {{else}}
-        Nice to see you!
+        {{ title }} spotted at {{ parkName }}
+      {{/if}}
+      {{#if error}}
+        {{ error }}
       {{/if}}
     </p>
     {{#if url}}
@@ -16,11 +17,13 @@
 
 <div class="block block-bordered-lg app-block-info">
   <div class="container text-center app-translate-15">
+    {{#if tags}}
     <blockquote class="pull-quote">
-      <p>
+      <cite>Tags</cite>
+      <p class="quote-tags">
         {{ tags }}
       </p>
-      <cite>Tags</cite>
     </blockquote>
+    {{/if}}
   </div>
 </div>

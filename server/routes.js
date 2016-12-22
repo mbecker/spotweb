@@ -14,7 +14,7 @@ firebase.initializeApp(config.firebase);
 module.exports = function(app) {
 
 	app.get('/', function (req, res) {
-	  res.render('home.handlebars', { title: 'Hey', message: 'Hello there!'});
+	  res.render('home.handlebars', { home: true });
 	});
 	
 	// Insert routes below
