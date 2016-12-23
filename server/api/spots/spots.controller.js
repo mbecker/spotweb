@@ -40,28 +40,22 @@ exports.spot = function(req, res) {
 		var file = bucket.file(arr[0] + '/' + arr[1]);
 		file.makePublic(function(err, apiResponse) {
 		   	if(err){
-		   		console.log("TEST 2");
 		   		console.error(err);
 		   		return returnError('Photo not found ...');
 		   	} else {
 		   		const url = 'https://storage.googleapis.com/safaridigitalapp.appspot.com/' + arr[0] + '/' + arr[1];
 		   		
 		   		if(resized){
-		   			// Update firebase entity with public storage url
-		   			console.log("TEST 12");
 			   		firebase.database().ref('/park/' + req.params.park + '/' + req.params.type + '/'  + req.params.id + '/images/resized/375x300/public').set({
 						url: url
 					}, function(){
-						console.log("CALLBACK TEST 123");
-						return handleError('checkPublicImage');
+						// ToDo: return res.semd doesn't work. Why?
 					});
 		   		} else {
-		   			console.log("TEST 14");
 		   			firebase.database().ref('/park/' + req.params.park + '/' + req.params.type + '/'  + req.params.id + '/images').update({
 						public: url
 					}, function(){
-						console.log("CALLBACK TEST 123");
-						
+						// ToDo: return res.semd doesn't work. Why?
 					});
 		   		}
 		   		
@@ -89,11 +83,9 @@ exports.spot = function(req, res) {
 	  			if(!snapshot.val().images['gcloud']) {
 	  				returnError('Photo not found ...');
 	  			}
-	  			console.log("### TEST 2212 ###");
 	  			return gcloudImage(snapshot.val().images['gcloud'], false)
 	  			break;
 	  		case 'checkResizedGcloudImage':
-	  			console.log("### TEST 23232323 ###");
 	  			if(!snapshot.val().images.resized['375x300']['gcloud']) {
 	  				returnError('Photo not found ...');
 	  			}
@@ -102,9 +94,7 @@ exports.spot = function(req, res) {
 	  	}
 	  }
 	
-	
-
-
+	  
 		if(!snapshot.exists()){
 			// ERROR 0: Item does not exsist
 	   		return res.render('spots.handlebars', { error: 'Spot not found ...' });
@@ -137,72 +127,18 @@ exports.spot = function(req, res) {
 	   	// ERROR 2: No resized images
 	   	return handleError('checkPublicImage');
 	   }
-	   if(!snapshot.val().images.resized){
+	   if(!snapshot.val().images.resized['350x300']){
 	   	// ERROR 3: No resized 375x300 images
 	   	// handleError('checkGcloudImage');
-	   	console.log(snapshot.val().images.resized)
 	   	return res.render('spots.handlebars', { error: 'Photo not found ...' });	
 	   }
 	   if (!snapshot.val().images.resized['375x300']['public']){
 	   		// ERROR 4: No resized 375x300 public images
 	   		return res.render('spots.handlebars', { error: 'Photo not found ...' });	
-	   		/* 
-	   		var pathname = url.parse(imageURL).pathname;
-	   		var arr = pathname.slice(1).split("/");
-	  		var bucket = gcs.bucket('safaridigitalapp.appspot.com/');
-	  		var file = bucket.file(arr[0] + '/' + arr[1]);
-	  		file.makePublic(function(err, apiResponse) {
-			   	if(err){
-			   		console.error(err);
-			   		return res.render('spots.handlebars', { error: 'Photo not found ...' });
-			   	} else {
-			   		const url = 'https://storage.googleapis.com/safaridigitalapp.appspot.com/' + arr[0] + '/' + arr[1];
-			   		
-			   		// Update firebase entity with public storage url
-			   		firebase.database().ref('/park/' + req.params.park + '/' + req.params.type + '/'  + req.params.spotId + '/urlpublicstorage375x300').set({
-					    url: url
-					  });	
-
-			   		return res.render('spots.handlebars', { parkName: parkName, tags: tagsArr.slice(2), url: url });
-			   	}
-			   });
-			   */
 	   } 
 
 	   // RETURN: SHOW public resized image
 	   returnImage(snapshot.val().images.resized['375x300']['public']);
-
-	   /*
-	   else {
-
-		  if (snapshot.val().urlpublicstorage && snapshot.val().urlpublicstorage.url) {
-		  	return res.render('spots.handlebars', { fullUrl: fullUrl, title: title, parkName: parkName, tags: tagsArr.slice(2), url: snapshot.val().urlpublicstorage.url });
-		  }
-
-		  var imageURL = snapshot.val().url;
-		  var pathname = url.parse(imageURL).pathname;
-		  var arr = pathname.slice(1).split("/");
-		  var bucket = gcs.bucket('safaridigitalapp.appspot.com/');
-		  var file = bucket.file(arr[0] + '/' + arr[1]);
-
-			file.makePublic(function(err, apiResponse) {
-		   	if(err){
-		   		console.error(err);
-		   		res.render('spots.handlebars', { error: 'Photo not found ...' });
-		   	} else {
-		   		const url = 'https://storage.googleapis.com/safaridigitalapp.appspot.com/' + arr[0] + '/' + arr[1];
-		   		res.render('spots.handlebars', { parkName: parkName, tags: tagsArr.slice(2), url: url });
-		   		// Update firebase entity with public storage url
-		   		firebase.database().ref('/park/' + req.params.park + '/' + req.params.type + '/'  + req.params.spotId + '/urlpublicstorage').set({
-				    url: url
-				  });	
-		   	}
-		   });
-
-	   }
-	   */
-
-	  
 
 	  
 	});

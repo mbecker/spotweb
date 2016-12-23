@@ -27,7 +27,8 @@
   padding-bottom: 20px;
 }
 .app-block-intro img {
-  width: 100%;
+  /* Image widt is determined by it's own width
+  width: 100%; */
 }
 .app-block-intro img {
   padding: 0px;
