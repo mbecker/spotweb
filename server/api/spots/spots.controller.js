@@ -94,7 +94,7 @@ exports.spot = function(req, res) {
 	  	}
 	  }
 	
-	  
+
 		if(!snapshot.exists()){
 			// ERROR 0: Item does not exsist
 	   		return res.render('spots.handlebars', { error: 'Spot not found ...' });
@@ -121,20 +121,20 @@ exports.spot = function(req, res) {
 	   */
 	   if (!snapshot.val().images) {
 	   	// ERROR 1: No images
-	   	return returnError('Photo not found ...');
+	   	return returnError('Photo not found ... 1');
 	   }
 	   if(!snapshot.val().images.resized){
 	   	// ERROR 2: No resized images
 	   	return handleError('checkPublicImage');
 	   }
-	   if(!snapshot.val().images.resized['350x300']){
+	   if(!snapshot.val().images.resized['375x300']){
 	   	// ERROR 3: No resized 375x300 images
 	   	// handleError('checkGcloudImage');
-	   	return res.render('spots.handlebars', { error: 'Photo not found ...' });	
+	   	return res.render('spots.handlebars', { error: 'Photo not found ... 2' });	
 	   }
 	   if (!snapshot.val().images.resized['375x300']['public']){
 	   		// ERROR 4: No resized 375x300 public images
-	   		return res.render('spots.handlebars', { error: 'Photo not found ...' });	
+	   		return res.render('spots.handlebars', { error: 'Photo not found ... 3' });	
 	   } 
 
 	   // RETURN: SHOW public resized image
