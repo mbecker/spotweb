@@ -10,10 +10,48 @@
       {{/if}}
     </p>
     {{#if url}}
-        <img src={{ url }} >
+        <img data-action="zoom" src={{ url }} >
     {{/if}}
+    
   </div>
 </div>
+
+
+{{#if images}}
+<div class="block block-bordered-lg pl-0 pt-0 pr-0" style="padding: 0;">
+  <div id="carousel-example-generic" class="carousel carousel-light slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      
+      {{#each images}}
+      <li data-target="#carousel-example-generic" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}" ></li>
+      {{/each}}
+      
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      {{#each images}}
+        <div class="item {{#if @first}}active{{/if}}">
+          <div class="block">
+            <div class="container">
+            <p style="text-align: center;">
+              <img class="img-fluid mt-5 app-block-game-img" src={{ this }}>
+              </p>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="icon-prev" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="icon-next" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+{{/if}}
 
 <div class="block block-bordered-lg app-block-info">
   <div class="container text-center app-translate-15">

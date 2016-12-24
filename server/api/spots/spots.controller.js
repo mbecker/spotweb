@@ -9,6 +9,8 @@ const gcs = storage({
   keyFilename: './server/config/mbecker.json'
 });
 const url = require('url');
+const async = require('async'); 
+const eachOf = require('async/eachOf');
 
 const tools = require('../../tools');
 const config = require('../../config/environment');
@@ -22,10 +24,13 @@ exports.index = function(req, res) {
 
 exports.spot = function(req, res) {
 
-	
-
 	  let returnImage = function(url) {
 	  	return res.render('spots.handlebars', { title: title, parkName: parkName, tags: tags.slice(2), url: url });
+	  }
+
+	  let returnImages = function(url, urls){
+	  	console.log(":: RETURN IMAGES ::");
+	  	return res.render('spots.handlebars', { title: title, parkName: parkName, tags: tags.slice(2), url: url, images: urls });
 	  }
 
 	  let returnError = function(error) {
@@ -62,7 +67,34 @@ exports.spot = function(req, res) {
 		   		
 		   	}
 		   });
-	  }	  
+	  }
+
+	  let checkImages = function(images){
+	  	var resizedImages = [];
+	  	async.eachOf(images, function(value, key, callback) {
+	  		if( !(key == "public" || key == "resized" || key == "gcloud") ) {
+	  			if(images[key].hasOwnProperty('resized')) {
+			  		let resized = images[key]['resized']
+			  		if(resized.hasOwnProperty('375x300')) {
+			  			let resized375 = resized['375x300']
+			  			if(resized375.hasOwnProperty('public')) {
+			  				// console.log(":: IMAGES ::");
+			  				resizedImages.push(resized375['public']);	
+			  				callback();
+			  			}
+			  		}
+			  	}
+	  		}
+	  	});
+	  	
+	  	// RETURN: SHOW public resized image
+	  	if(resizedImages.length > 0){
+	  		returnImages(images.resized['375x300']['public'], resizedImages);
+	  	} else {
+	  		returnImage(images.resized['375x300']['public']);
+	  	}
+	   
+	  }
 
 	  var title;
 	  var parkName;
@@ -137,8 +169,8 @@ exports.spot = function(req, res) {
 	   		return res.render('spots.handlebars', { error: 'Photo not found ... 3' });	
 	   } 
 
-	   // RETURN: SHOW public resized image
-	   returnImage(snapshot.val().images.resized['375x300']['public']);
+	   checkImages(snapshot.val().images);
+	   
 
 	  
 	});
