@@ -9,27 +9,27 @@
         {{ error }}
       {{/if}}
     </p>
-    {{#if url}}
-        <img data-action="zoom" src={{ url }} >
-    {{/if}}
-    
-  </div>
-</div>
-
-
-{{#if images}}
-<div class="block block-bordered-lg pl-0 pt-0 pr-0" style="padding: 0;">
-  <div id="carousel-example-generic" class="carousel carousel-light slide" data-ride="carousel">
+    <div id="carousel-example-generic" class="carousel carousel-light slide" data-ride="carousel">
     <ol class="carousel-indicators">
       
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active" ></li>
       {{#each images}}
-      <li data-target="#carousel-example-generic" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}" ></li>
+      <li data-target="#carousel-example-generic" data-slide-to="{{add @index 1}}" ></li>
       {{/each}}
       
     </ol>
     <div class="carousel-inner" role="listbox">
+      <div class="item active">
+          <div class="block">
+            <div class="container">
+            <p style="text-align: center;">
+              <img class="img-fluid mt-5 app-block-game-img" src={{ url }}>
+              </p>
+            </div>
+          </div>
+        </div>
       {{#each images}}
-        <div class="item {{#if @first}}active{{/if}}">
+        <div class="item">
           <div class="block">
             <div class="container">
             <p style="text-align: center;">
@@ -50,8 +50,10 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+    
+  </div>
 </div>
-{{/if}}
+
 
 <div class="block block-bordered-lg app-block-info">
   <div class="container text-center app-translate-15">

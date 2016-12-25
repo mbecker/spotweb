@@ -25,12 +25,21 @@ exports.index = function(req, res) {
 exports.spot = function(req, res) {
 
 	  let returnImage = function(url) {
-	  	return res.render('spots.handlebars', { title: title, parkName: parkName, tags: tags.slice(2), url: url });
+	  	return res.render('spots.handlebars', { title: title, parkName: parkName, tags: tags.slice(2), url: url, 
+	  		helpers: {
+            	foo: function () { return 'foo.'; }
+        	}
+        });
 	  }
 
 	  let returnImages = function(url, urls){
 	  	console.log(":: RETURN IMAGES ::");
-	  	return res.render('spots.handlebars', { title: title, parkName: parkName, tags: tags.slice(2), url: url, images: urls });
+	  	return res.render('spots.handlebars', { title: title, parkName: parkName, tags: tags.slice(2), url: url, images: urls,
+	  		helpers: {
+            	foo: function () { return 'foo.'; },
+            	add: function(a, b) { return a + b }
+        	}
+        });
 	  }
 
 	  let returnError = function(error) {

@@ -8,6 +8,19 @@
  overflow: hidden;
 }
 
+@media screen and (min-width: 768px) {
+  .item > .block {
+    padding: 0px;
+  }
+  .carousel-indicators {
+    bottom: -30px;
+  }
+}
+.block-bordered-lg:before,
+.block-bordered:before {
+  border-top: 0px solid;
+}
+
 
 /* navbar */
 .app-navbar {
